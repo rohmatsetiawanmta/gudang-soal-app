@@ -24,28 +24,27 @@ const App = () => {
       <AppLayout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-
           {/* Jalur Materi Sekolah */}
-          <Route path="/materi" element={<JenjangSekolah />} />
-          <Route path="/materi/:jenjang" element={<DaftarKelas />} />
-          <Route path="/materi/:jenjang/:kelas" element={<DaftarMapel />} />
+          // src/App.jsx
+          {/* Jalur Latihan Soal (Sekolah) */}
+          <Route path="/latsol" element={<JenjangSekolah filter="sekolah" />} />
+          <Route path="/latsol/:jenjang" element={<DaftarKelas />} />
+          <Route path="/latsol/:jenjang/:kelas" element={<DaftarMapel />} />
           <Route
-            path="/materi/:jenjang/:kelas/:mapel"
+            path="/latsol/:jenjang/:kelas/:mapel"
             element={<DaftarTopik />}
           />
-
-          {/* Jalur Ujian */}
-          <Route path="/ujian" element={<DaftarUjian />} />
-          <Route path="/ujian/:ujianId" element={<DaftarSubtes />} />
-          <Route path="/ujian/:ujianId/:subtesId" element={<DaftarTopik />} />
-
-          {/* SHARED LEVEL - Menggunakan SLUG */}
+          <Route path="/ujian" element={<JenjangSekolah filter="ujian" />} />
+          <Route path="/ujian/:jenjang" element={<DaftarKelas />} />
+          <Route path="/ujian/:jenjang/:kelas" element={<DaftarMapel />} />
+          <Route
+            path="/ujian/:jenjang/:kelas/:mapel"
+            element={<DaftarTopik />}
+          />
           <Route path="/sub-topik/:slugTopik" element={<DaftarSubTopik />} />
           <Route path="/daftar-soal/:slugSubTopik" element={<DaftarSoal />} />
-
           {/* ACTION PAGE - Menggunakan ID 8 Karakter (a-z0-9) */}
           <Route path="/soal/:questionId" element={<DetailSoal />} />
-
           <Route path="/progress" element={<Progress />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>

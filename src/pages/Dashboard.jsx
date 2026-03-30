@@ -48,7 +48,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {/* Jalur 1: Materi Sekolah */}
         <Link
-          to="/materi"
+          to="/latsol"
           className="group relative p-8 bg-blue-600 rounded-[2rem] text-white shadow-xl shadow-blue-200 overflow-hidden transition-all hover:scale-[1.02] active:scale-95"
         >
           <div className="relative z-10">
