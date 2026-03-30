@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import BottomNav from "./BottomNav";
+import Breadcrumbs from "../ui/Breadcrumbs";
 
 const AppLayout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const AppLayout = ({ children }) => {
       {/* Main Content Area */}
       <main className="lg:ml-64 min-h-screen">
         <div className="max-w-5xl mx-auto p-6 lg:p-12 text-slate-800">
+          <Breadcrumbs />
           {children}
         </div>
       </main>
